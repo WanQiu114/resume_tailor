@@ -1,0 +1,2 @@
+# PDF text extraction, word bounding boxes, and page rendering.
+PyMuPDF>=1.24,<2

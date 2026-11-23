@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+tools/
+resumes/build/
+# Application content and reviews contain personal data and remain local by default.
+resumes/latex/
+resumes/pdfs/
+resumes/reviews/
+# Source templates contain personal contact details; keep them out of the public repo.
+template/
+# Local Claude Code settings (machine-specific permissions).
+.claude/settings.local.json

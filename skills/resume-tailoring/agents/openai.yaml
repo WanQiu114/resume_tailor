@@ -1,0 +1,4 @@
+interface:
+  display_name: "Resume Tailoring"
+  short_description: "Tailor LaTeX resumes and research CVs to job descriptions"
+  default_prompt: "Use $resume-tailoring to tailor my resume or CV to the company, job title, and JD below, save LaTeX and a reviewed PDF, and show the complete LaTeX in chat."

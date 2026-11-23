@@ -1,0 +1,456 @@
+# 010-Agent-Evaluation-Harness
+
+## task_id
+
+template_agent_evaluation_20261113
+
+## date
+
+2026-11-13
+
+## goal
+
+Expand both master templates with explicitly authorized agent evaluation, optimization, observability, and experimental harness experience.
+
+## authorization
+
+User explicitly requested template modification. This overrides routine immutable-template rules for these edits only; no skill, architecture, or unrelated application changes.
+
+## changes
+
+```json
+[
+  "Fintelics: functional evaluation of agent skills, prompts and tools, plus iterative comparisons before and after revisions.",
+  "RA: functional tests defined before agent runs; trajectory analysis for task adherence, out-of-scope tool calls, redundant actions, missed/extra removals; token, tool-call and runtime evaluation.",
+  "RA: separate Codex/GPT harness prototype, scoped tools, memory retrieval before edits, 12-record rolling memory and summary compaction, call limits, bounded validation retries and termination at validated submission readiness.",
+  "RA: user-confirmed unpublished experiment on 387 logging removal tasks, relative reference alignment +34%, runtime -11%, tokens approximately -20% versus native Codex/GPT.",
+  "LogRem context evaluation: use one named configuration and its own baseline, not cross-model differences or a pooled improvement.",
+  "Resume skills: agent evaluation, harness design, observability, tool calling and context engineering. CV research competencies: harness design."
+]
+```
+
+## affected_files
+
+```json
+[
+  "template/resume_template.tex",
+  "template/CV_template.tex",
+  "docs/changes/010-agent-evaluation-harness.jsonl",
+  "docs/changes/010-agent-evaluation-harness.md"
+]
+```
+
+## rationale
+
+Concrete implementation details and explicit metrics show agent design and evaluation experience. Keep research evaluation distinct from ERP engineering, and unpublished harness results distinct from manuscript tables.
+
+## expected_behavior
+
+Future fresh-template applications may select these now-authorized facts. Tailor the evidence pool to each JD; do not include every bullet or carry these results into unrelated projects.
+
+## source_facts
+
+```json
+{
+  "fintelics": "User describes functional testing of skills/prompts/tools and before/after efficiency and accuracy evaluation; no numeric gain supplied.",
+  "ra_functional_evaluation": "User describes TDD task construction with tests established before execution, task completion checks, trajectory/tool-call observability, and resource-use comparisons.",
+  "custom_harness": "User describes independent read/edit/log tools, memory read before code edits, the latest 12 records with summary replacement, tool-call cap, bounded validation and stop/submit when ready after successful checks.",
+  "custom_harness_clarification": "User confirmed relative 34% improvement over native Codex + GPT on 387 logging removal instances, measured by alignment with validated answers. Runtime -11% and token use about -20% supplied in original request.",
+  "experiment_status": "Custom harness experiment was not included in the paper; stated as unpublished in rendered bullets.",
+  "screenshots": [
+    {
+      "original": "C:\\Users\\WanQiu\\AppData\\Local\\Temp\\codex-clipboard-a77c6327-1034-4bf2-b8aa-58adc1dc0c44.png",
+      "saved": "resumes\\reviews\\template_agent_evaluation_20261113\\evidence\\table-04-output-metrics.png",
+      "sha256": "7d45fb85fd09aa224e4a10fb9a52eed3725f26ba10aabf615367b84e4d99638b"
+    },
+    {
+      "original": "C:\\Users\\WanQiu\\AppData\\Local\\Temp\\codex-clipboard-aa707d15-e64f-4e90-aa9d-ec3db5f40206.png",
+      "saved": "resumes\\reviews\\template_agent_evaluation_20261113\\evidence\\table-05-removal-errors.png",
+      "sha256": "5644429ae23615c61980b844341f10d7375d45b2fa18977f764527b758514f07"
+    },
+    {
+      "original": "C:\\Users\\WanQiu\\AppData\\Local\\Temp\\codex-clipboard-ff601470-ad52-4993-badb-cf0307b239a8.png",
+      "saved": "resumes\\reviews\\template_agent_evaluation_20261113\\evidence\\table-09-execution-cost.png",
+      "sha256": "7c106d2db445294e8485765f7f8666a693d512349688025ed85be337b9ad33dd"
+    },
+    {
+      "original": "C:\\Users\\WanQiu\\AppData\\Local\\Temp\\codex-clipboard-1861a393-3095-4554-90ba-d8a7ea8df344.png",
+      "saved": "resumes\\reviews\\template_agent_evaluation_20261113\\evidence\\tables-10-11-context-effects.png",
+      "sha256": "22232a814f64d210d36a3bbd167c6296713c185b0dde599ad52a8d7dd304eb38"
+    }
+  ]
+}
+```
+
+## metric_records
+
+```json
+[
+  {
+    "id": "claude_sonnet_context",
+    "source": "evidence/tables-10-11-context-effects.png, Table 10",
+    "setting": "Claude Code + Sonnet 4.6",
+    "baseline": "Base",
+    "comparison": "Base+CD",
+    "reference_alignment_percent": {
+      "before": 11.1,
+      "after": 22.2,
+      "percentage_point_change": 11.1
+    },
+    "exact_removal_match_percent": {
+      "before": 26.1,
+      "after": 42.4,
+      "percentage_point_change": 16.3
+    },
+    "runtime_seconds_per_task": {
+      "before": 48.2,
+      "after": 38.2,
+      "relative_reduction_percent": 20.7
+    },
+    "interpretation": "Specific observed context-setting comparison, not an overall model gain; CD expansion not supplied and not invented."
+  },
+  {
+    "id": "custom_codex_gpt_harness",
+    "source": "Current user request and follow-up clarification",
+    "baseline": "Native Codex + GPT",
+    "comparison": "User custom Codex + GPT agent/harness",
+    "task_domain": "Logging removal",
+    "instances": 387,
+    "metric": "Alignment with validated reference answers",
+    "relative_alignment_improvement_percent": 34,
+    "runtime_reduction_percent": 11,
+    "approximate_token_reduction_percent": 20,
+    "paper_inclusion": false,
+    "evidence_status": "User reported; raw logs and code not inspected in this task."
+  }
+]
+```
+
+## assumptions
+
+```json
+[
+  "The custom harness is RA research work, based on placement and user description.",
+  "No GPT version, exact validation retry limit, experiment dates or raw baseline alignment rate are inferred."
+]
+```
+
+## factual_checks
+
+```json
+[
+  "No numeric Fintelics improvements added.",
+  "34% is relative reference alignment, not 34 percentage points or generic software correctness.",
+  "Screenshot metrics stay tied to their named configuration and baseline.",
+  "TDD tests are described as assessment criteria, without claiming proof against test overfitting.",
+  "Existing dates, titles, publications and unrelated experience retained without new verification."
+]
+```
+
+## template_hashes_before
+
+```json
+{
+  "CV_template.tex": "7204ed0a1e8629329ad6f4b4ec830810aec1d024c4c75325c81e23dacdaa7131",
+  "resume.cls": "c9e31264abeb306e3e672b0aca01ae3d80a423ca36425bdb453570cc0a09e6bf",
+  "resume_template.tex": "0fb1f878e84ef43a1b50a24b22a0fcd11629dbac32200769c4b1faed123a8d51"
+}
+```
+
+## template_hashes_after
+
+```json
+{
+  "CV_template.tex": "49454c83c81ad297ca6e911dd78ad703c5c9948ab2d2026cc2b322630e507bf8",
+  "resume.cls": "c9e31264abeb306e3e672b0aca01ae3d80a423ca36425bdb453570cc0a09e6bf",
+  "resume_template.tex": "684210309a8de4cd0c2ddd8cc6b428c8dec3a83287df308ff61776951d2d53ab"
+}
+```
+
+## backup_directory
+
+resumes\reviews\template_agent_evaluation_20261113\before
+
+## unified_diff
+
+```diff
+--- before/resume_template.tex
++++ template/resume_template.tex
+@@ -61,7 +61,7 @@
+ % ============================================================
+ 
+ \begin{rSection}{Technical Skills}
+-\textbf{AI \& Machine Learning:} Agentic Coding, OpenAI Codex, Claude Code, LangGraph, Agent Skills, LLMs, RAG, Reinforcement Learning, LLM Fine-Tuning (SFT, GRPO), NLP, AI-Powered Workflows, OpenAI API, Anthropic API, Open-Source Models, Prompt Engineering\\
++\textbf{AI \& Machine Learning:} Agentic Coding, Agent Evaluation, Agent Harness Design, Agent Observability, Tool Calling, Context Engineering, OpenAI Codex, Claude Code, LangGraph, Agent Skills, LLMs, RAG, Reinforcement Learning, LLM Fine-Tuning (SFT, GRPO), NLP, AI-Powered Workflows, OpenAI API, Anthropic API, Open-Source Models, Prompt Engineering\\
+ \textbf{Programming Languages:} Python, C, C\#, C++, Java, JavaScript, TypeScript, SQL\\
+ \textbf{Web Development:} HTML, CSS, React, Next.js, Node.js, NestJS, Express, Vite, REST APIs\\
+ \textbf{Databases \& Data Tools:} PostgreSQL, MongoDB, Pandas, NumPy, JSON\\
+@@ -97,6 +97,15 @@
+     application creation and evolution from
+     natural-language requirements and reusable templates.
+ 
++    % User-authorized agent evaluation experience, 2026-11-13; see docs/changes/010-agent-evaluation-harness.md.
++    \item Evaluate ERP agent skills, prompts, and tools
++    against functional tests to verify task completion
++    and identify workflow failures.
++
++    \item Iteratively refine skills, prompts, and tools,
++    and compare functional test results and execution
++    efficiency before and after each change.
++
+     \item Build frontend features with React,
+     TypeScript, and Vite, and implement backend
+     REST APIs with Node.js, NestJS, and TypeScript.
+@@ -186,9 +195,42 @@
+     mined 5,000 commits into 114 tasks, and benchmarked
+     110 variants over 10,000 runs each.
+ 
+-    \item Built automated evaluation pipelines to
+-    analyze agent actions, tool usage, execution
+-    trajectories, task outcomes, and execution costs.
++    % User-authorized research evaluation and experimental harness experience, 2026-11-13.
++    \item Built automated evaluation pipelines with
++    functional tests defined before agent runs to
++    assess task completion and preserve software
++    functionality, following TDD principles.
++
++    \item Analyzed execution trajectories for task adherence,
++    out-of-scope tool calls, redundant actions, and missed
++    or extra code removals; measured token usage,
++    tool calls, and runtime across agent configurations.
++
++    \item Compared task outcomes and execution costs after
++    changes to methods, skills, prompts, and harnesses.
++
++    \item Evaluated added task context for Claude Code
++    with Sonnet 4.6: reference-change alignment rose
++    from 11.1\% to 22.2\%, exact removal match from
++    26.1\% to 42.4\%, and runtime per task fell 20.7\%
++    relative to the same configuration's baseline.
++
++    \item Prototyped a Codex/GPT agent harness with
++    separate tools for code reading, editing, and step
++    logging, and required memory retrieval before edits.
++
++    \item Implemented a 12-record memory window with
++    summary compaction, tool call limits, bounded
++    validation retries, and submission after successful
++    checks once the agent was ready to submit.
++
++    \item In an unpublished experiment across 387 logging
++    removal tasks, improved alignment with validated
++    reference answers by 34\% relative to native
++    Codex/GPT, with 11\% lower runtime and approximately
++    20\% fewer tokens.
++    % User-reported experiment; 34% is a relative alignment improvement, not percentage points.
++    % Separate from the paper's agent/context comparisons; raw run logs were not supplied here.
+ 
+     \item Evaluated agentic coding workflows across
+     multiple agent frameworks, commercial models,
+--- before/CV_template.tex
++++ template/CV_template.tex
+@@ -84,6 +84,9 @@
+ \vspace{-1.6em}
+ \begin{itemize}
+     \item Develop a Python ERP development agent using the OpenAI Codex SDK to create and evolve applications from natural-language requirements and reusable templates.
++    % User-authorized agent evaluation experience, 2026-11-13; see docs/changes/010-agent-evaluation-harness.md.
++    \item Evaluate ERP agent skills, prompts, and tools against functional tests to verify task completion and identify workflow failures.
++    \item Iteratively refine skills, prompts, and tools, and compare functional test results and execution efficiency before and after each change.
+     % Source-verified additions authorized on 2026-11-03; see docs/changes/003-fintelics-template-evidence.md.
+     % Review gates are implemented capabilities, not evidence of personal peer-review participation.
+     % Database scaling is a future design path, not a completed RDS migration or load-test result.
+@@ -125,6 +128,14 @@
+     \item Categorized 22 logging patterns across message construction, API and method calls, parameters, and output transport; mined 5,000 commits into 114 real-world tasks covering 14 patterns.
+     \item Smoke-tested 110 logging-code variants over 10,000 runs each and observed measurable runtime differences between patterns.
+     \item Conducted research on AI for Software Engineering, focusing on LLM-based coding agents, software maintenance tasks, logging-related code analysis, and agent evaluation.
++    % User-authorized research evaluation experience, 2026-11-13.
++    \item Built automated evaluation pipelines with functional tests defined before agent runs to assess task completion and preserve software functionality, following TDD principles.
++    \item Analyzed execution trajectories for task adherence, out-of-scope tool calls, and redundant actions; measured token usage, tool calls, and runtime after changes to methods, skills, prompts, and harnesses.
++    \item Prototyped a Codex/GPT agent harness with separate tools for code reading, editing, and step logging, and required memory retrieval before edits.
++    \item Implemented a 12-record memory window with summary compaction, tool call limits, bounded validation retries, and submission after successful checks once the agent was ready to submit.
++    \item In an unpublished experiment across 387 logging removal tasks, improved alignment with validated reference answers by 34\% relative to native Codex/GPT, with 11\% lower runtime and approximately 20\% fewer tokens.
++    % User-reported experiment; 34% is a relative alignment improvement, not percentage points.
++    % Separate from the paper's agent/context comparisons; raw run logs were not supplied here.
+     \item Collected, analyzed, and structured real-world software engineering data from open-source repositories to support empirical studies and benchmark construction.
+     \item Prepared research manuscripts on coding agents, reinforcement learning in the software development lifecycle, and LLM-based logging security analysis.
+ \end{itemize}
+@@ -211,7 +222,9 @@
+ 
+     \item Evaluated four coding agents across eight agent-model configurations, measuring output validity, alignment with real-world changes, and preservation of unrelated code.
+ 
+-    \item Analyzed agent execution trajectories, including removal actions, tool use, and repository exploration, to identify missed and extra removals and examine execution costs and the effects of additional task context.
++    \item Analyzed agent execution trajectories, including removal actions, tool use, and repository exploration, to identify missed and extra removals and examine token usage, tool calls, and runtime.
++    % Screenshot Table 10: Base versus Base+CD for Claude Code with Sonnet 4.6.
++    \item Evaluated added task context for Claude Code with Sonnet 4.6: reference-change alignment rose from 11.1\% to 22.2\% and exact removal match from 26.1\% to 42.4\%; runtime per task fell from 48.2 to 38.2 seconds (20.7\%) relative to the same configuration's baseline.
+ \end{itemize}
+ 
+ 
+@@ -219,7 +232,7 @@
+ %\textit{Collaborative Research}
+ \vspace{-1.5em}
+ \begin{itemize}
+-    \item Integrated Test-Driven Development principles into the evaluation pipeline, utilizing test suites to ensure the functional integrity of agent-generated code.
++    \item Defined functional tests before agent execution as part of a Test-Driven Development evaluation workflow to assess task completion and preserve software functionality.
+     \item Developed a benchmark suite with executable evaluation rules to assess coding agents on non-functional improvements.
+     \item Designed an evaluation framework to measure agentic performance in complex, long-horizon software maintenance tasks.
+     % GRPO fine-tuning added 2026-11-04 by explicit user request; see docs/changes/007-nficodebench-grpo-experience.md. Ongoing work: no results claimed.
+@@ -268,6 +281,8 @@
+ 
+ \begin{itemize}
+     \item \textbf{AI Agent Evaluation \& Observability}: Experience in evaluating LLM-based coding agents, analyzing execution trajectories, tool-use behavior, repository exploration, and agent performance.
++
++    \item \textbf{Agent Harness Design}: Prototyped scoped tools, enforced memory retrieval before edits, implemented rolling memory with summary compaction, and bounded tool calls and validation retries.
+ 
+     \item \textbf{Benchmark Design \& Empirical Research}: Constructed real-world software engineering benchmarks, developed automated evaluation pipelines, and conducted controlled experiments across multiple agent configurations.
+ 
+
+```
+
+## validation
+
+```json
+[
+  {
+    "template": "template\\resume_template.tex",
+    "source_sha256": "684210309a8de4cd0c2ddd8cc6b428c8dec3a83287df308ff61776951d2d53ab",
+    "pdf": "resumes\\pdfs\\HeYang_Yuan_resume_template_Agent_Evaluation_20261113.pdf",
+    "pdf_sha256": "faa63c5672058698188b359822f758c015bdfcd5809e582fd4dfdc1233ee983a",
+    "compile_exit_code": 0,
+    "page_count": 3,
+    "pages": [
+      {
+        "page": 1,
+        "png": "resumes\\reviews\\template_agent_evaluation_20261113\\resume_template\\page-1.png",
+        "word_count": 470,
+        "out_of_page_words": []
+      },
+      {
+        "page": 2,
+        "png": "resumes\\reviews\\template_agent_evaluation_20261113\\resume_template\\page-2.png",
+        "word_count": 602,
+        "out_of_page_words": []
+      },
+      {
+        "page": 3,
+        "png": "resumes\\reviews\\template_agent_evaluation_20261113\\resume_template\\page-3.png",
+        "word_count": 262,
+        "out_of_page_words": []
+      }
+    ],
+    "text_checks": {
+      "12-record": true,
+      "22.2%": true,
+      "42.4%": true,
+      "20.7%": true,
+      "34%": true,
+      "11%": true,
+      "20%": true,
+      "387 logging": true,
+      "unpublished experiment": true,
+      "summary compaction": true,
+      "functional tests": true
+    },
+    "warnings": [
+      "warning: resume_template.tex:39: Overfull \\hbox (30.0pt too wide) in paragraph at lines 39--39",
+      "warning: warnings were issued by the TeX engine; use --print and/or --keep-logs for details."
+    ],
+    "visual_status": "passed_all_pages_inspected",
+    "reading_order_status": "passed_extracted_text_reviewed",
+    "scope": "Full master evidence template, not a one-page application.",
+    "generated_source": "resumes\\latex\\HeYang_Yuan_resume_template_Agent_Evaluation_20261113.tex",
+    "visual_notes": "Readable text, no clipping or overlaps observed. Master templates retain cross-page lists and normal hyphenation; not application-ready one-page resumes."
+  },
+  {
+    "template": "template\\CV_template.tex",
+    "source_sha256": "49454c83c81ad297ca6e911dd78ad703c5c9948ab2d2026cc2b322630e507bf8",
+    "pdf": "resumes\\pdfs\\HeYang_Yuan_CV_template_Agent_Evaluation_20261113.pdf",
+    "pdf_sha256": "e8fbbe081969cb3a46a5bcd7567e55fd782a22ca78672985bd4b2f66de9e89d0",
+    "compile_exit_code": 0,
+    "page_count": 4,
+    "pages": [
+      {
+        "page": 1,
+        "png": "resumes\\reviews\\template_agent_evaluation_20261113\\CV_template\\page-1.png",
+        "word_count": 428,
+        "out_of_page_words": []
+      },
+      {
+        "page": 2,
+        "png": "resumes\\reviews\\template_agent_evaluation_20261113\\CV_template\\page-2.png",
+        "word_count": 472,
+        "out_of_page_words": []
+      },
+      {
+        "page": 3,
+        "png": "resumes\\reviews\\template_agent_evaluation_20261113\\CV_template\\page-3.png",
+        "word_count": 491,
+        "out_of_page_words": []
+      },
+      {
+        "page": 4,
+        "png": "resumes\\reviews\\template_agent_evaluation_20261113\\CV_template\\page-4.png",
+        "word_count": 255,
+        "out_of_page_words": []
+      }
+    ],
+    "text_checks": {
+      "12-record": true,
+      "22.2%": true,
+      "42.4%": true,
+      "20.7%": true,
+      "34%": true,
+      "11%": true,
+      "20%": true,
+      "387 logging": true,
+      "unpublished experiment": true,
+      "summary compaction": true,
+      "functional tests": true
+    },
+    "warnings": [
+      "warning: CV_template.tex:37: Overfull \\hbox (30.0pt too wide) in paragraph at lines 37--37",
+      "warning: CV_template.tex:59: Underfull \\hbox (badness 10000) in paragraph at lines 55--59",
+      "warning: CV_template.tex:240: Overfull \\hbox (0.37985pt too wide) in paragraph at lines 239--240",
+      "warning: warnings were issued by the TeX engine; use --print and/or --keep-logs for details."
+    ],
+    "visual_status": "passed_all_pages_inspected",
+    "reading_order_status": "passed_extracted_text_reviewed",
+    "scope": "Full master evidence template, not a one-page application.",
+    "generated_source": "resumes\\latex\\HeYang_Yuan_CV_template_Agent_Evaluation_20261113.tex",
+    "visual_notes": "Readable text, no clipping or overlaps observed. Master templates retain cross-page lists and normal hyphenation; not application-ready one-page resumes."
+  }
+]
+```
+
+## scoring
+
+```json
+{
+  "status": "not_applicable",
+  "reason": "Master-template evidence update; no JD supplied, so no local JD score or keyword denominator is defined."
+}
+```
+
+## known_issues
+
+```json
+[
+  "Runtime, token and alignment experiment claims come from user reports/screenshots, not rerun experiments or raw-log audits.",
+  "No statistical significance, repeated-run uncertainty, GPT version or absolute native baseline rate supplied.",
+  "Master Resume remains three pages and CV four pages; later application outputs require role-specific selection.",
+  "LaTeX reports header/education/title box warnings in retained template constructs; all seven pages inspected with no visible clipping or overlap.",
+  "Old application preparation manifests contain earlier template hashes; existing outputs were not modified."
+]
+```
+
+## next_steps
+
+```json
+[
+  "For a new application, select the most relevant bullets from the updated templates and compile/review the resulting layout.",
+  "If experiment evidence is later needed, retain raw native/custom run logs, exact model/settings, metric definition and aggregation method."
+]
+```
+
+## updated_at
+
+2026-11-13T18:41:42.814332+00:00

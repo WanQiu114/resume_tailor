@@ -1,0 +1,33 @@
+# Tooling
+
+## task_id
+
+resume-agent-001
+
+## version
+
+0.17.0
+
+## url
+
+https://github.com/tectonic-typesetting/tectonic/releases/download/tectonic%400.17.0/tectonic-0.17.0-x86_64-pc-windows-msvc.zip
+
+## archive_sha256
+
+f61ce51f0b0ade1015b7de7ef368541c5424e9756ecbd0d7af97d6d48030845f
+
+## upstream_digest
+
+sha256:f61ce51f0b0ade1015b7de7ef368541c5424e9756ecbd0d7af97d6d48030845f
+
+## upstream_digest_verified
+
+True
+
+## installation
+
+tools/tectonic/tectonic.exe
+
+## updated_at
+
+2026-11-02T16:24:51.142109+00:00
